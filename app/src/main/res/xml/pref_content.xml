@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="pref_screen_root"
+                  android:icon="@mipmap/ic_launcher">
+
+    <PreferenceCategory
+        android:key="@string/business"
+        android:title="@string/business">
+
+        <EditTextPreference
+            android:key="business_name"
+            android:hint="@string/business_name"
+            android:title="@string/business_name"/>
+
+        <com.commonsware.cwac.colormixer.ColorPreference
+            android:key="business_color"
+            android:defaultValue="0xFFA4C639"
+            android:title="@string/color"
+            android:summary="Blue.  No yel--  Auuuuuuuugh!"/>
+
+        <CheckBoxPreference
+            android:key="confirm_delete_email"
+            android:title="@string/show"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/logo"
+        android:title="@string/logo">
+
+        <EditTextPreference
+            android:key="logo_name"
+            android:hint="@string/logo_name"
+            android:title="@string/logo_name"/>
+
+        <Preference
+            android:key="logo_file"
+            android:title="@string/choose_file"
+            android:summary="File name"/>
+
+        <CheckBoxPreference
+            android:key="confirm_delete_email"
+            android:title="@string/show"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+
+
+
+</PreferenceScreen>

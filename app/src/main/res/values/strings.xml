@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CompanyData</string>
+    <string name="business">Business</string>
+    <string name="business_name">Business Name</string>
+    <string name="show">Show</string>
+    <string name="color">Color</string>
+    <string name="logo">Logo</string>
+    <string name="logo_name">Logo name</string>
+    <string name="choose_file">Choose file</string>
+</resources>
