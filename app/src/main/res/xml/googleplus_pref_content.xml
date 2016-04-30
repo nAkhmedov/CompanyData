@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:key="pref_screen_root"
+                  android:icon="@mipmap/ic_launcher">
+
+    <PreferenceCategory
+        android:key="google_plus"
+        android:title="@string/google_plus">
+
+        <EditTextPreference
+            android:key="google_plus_address"
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="google_plus_label_color"
+            android:title="@string/color"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="google_plus_icon_color"
+            android:title="@string/color_icons"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <EditTextPreference
+            android:key="google_plus_label"
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
+
+        <CheckBoxPreference
+            android:key="if_google_plus"
+            android:title="@string/show"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

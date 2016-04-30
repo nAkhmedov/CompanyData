@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:key="pref_screen_root"
+                  android:icon="@mipmap/ic_launcher">
+
+    <PreferenceCategory
+        android:key="pinterest"
+        android:title="@string/pinterest">
+
+        <EditTextPreference
+            android:key="pinterest_address"
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="pinterest_label_color"
+            android:title="@string/color"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="pinterest_icon_color"
+            android:title="@string/color_icons"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <EditTextPreference
+            android:key="pinterest_label"
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
+
+        <CheckBoxPreference
+            android:key="if_pinterest"
+            android:title="@string/show"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

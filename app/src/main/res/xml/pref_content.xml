@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
                   android:key="pref_screen_root"
                   android:icon="@mipmap/ic_launcher">
 
     <PreferenceCategory
-        android:key="@string/business"
-        android:title="@string/business">
+        android:key="business"
+        android:title="@string/business_name">
 
         <EditTextPreference
             android:key="business_name"
-            android:hint="@string/business_name"
-            android:title="@string/business_name"/>
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
 
-        <com.commonsware.cwac.colormixer.ColorPreference
-            android:key="business_color"
-            android:defaultValue="0xFFA4C639"
-            android:title="@string/color"
-            android:summary="Blue.  No yel--  Auuuuuuuugh!"/>
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="business_color_code"
+            android:title="Color reference"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="2dp"/>
 
         <CheckBoxPreference
             android:key="confirm_delete_email"
@@ -32,8 +34,8 @@
 
         <EditTextPreference
             android:key="logo_name"
-            android:hint="@string/logo_name"
-            android:title="@string/logo_name"/>
+            android:hint="@string/type_here"
+            android:title="@string/name"/>
 
         <Preference
             android:key="logo_file"
@@ -44,10 +46,98 @@
             android:key="confirm_delete_email"
             android:title="@string/show"
             android:defaultValue="false"/>
-
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="bg_img"
+        android:title="@string/bg_img">
 
+        <EditTextPreference
+            android:key="bg_text"
+            android:hint="@string/type_here"
+            android:title="@string/bg_text"/>
 
+        <Preference
+            android:key="bg_img_file"
+            android:title="@string/choose_file"
+            android:summary="File name"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="bg_color"
+        android:title="@string/bg_color">
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="bg_color_code"
+            android:title="@string/bg_color"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="color_header"
+        android:title="@string/header">
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="header_color_code"
+            android:title="@string/header"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <CheckBoxPreference
+            android:key="show_color_header"
+            android:title="@string/show_color"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="color_footer"
+        android:title="@string/footer">
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="footer_color_code"
+            android:title="@string/footer"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <CheckBoxPreference
+            android:key="show_color_footer"
+            android:title="@string/show_color"
+            android:defaultValue="true"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="color_icons_code"
+            android:title="@string/color_icons"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="color_bg_icons_code"
+            android:title="@string/bg_icons"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="main_label_txt"
+        android:title="@string/main_label_txt">
+
+        <EditTextPreference
+            android:key="label_text"
+            android:hint="@string/type_here"
+            android:title="@string/label_text"/>
+
+        <com.thebluealliance.spectrum.SpectrumPreference
+            android:defaultValue="@color/colorAccent"
+            android:key="color_label_txt_code"
+            android:title="@string/color"
+            app:spectrum_colors="@array/demo_colors"
+            app:spectrum_borderWidth="1dp"/>
+    </PreferenceCategory>
 
 </PreferenceScreen>
