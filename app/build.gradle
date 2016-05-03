@@ -25,6 +25,14 @@ repositories {
     }
 }
 
+task copyDAOSourcesTask(type: Copy) {
+    println '1. copying generated dao...'
+    from '../dao/gen'
+    into 'src/main/java'
+}
+
+preBuild.dependsOn project(':dao').run, copyDAOSourcesTask
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
