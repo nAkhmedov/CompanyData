@@ -12,26 +12,22 @@
         <EditTextPreference
             android:key="android_address"
             android:hint="@string/type_here"
-            android:title="@string/name"/>
+            android:title="@string/android_address"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="android_label_color"
             android:title="@string/color"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="android_icon_color"
             android:title="@string/color_icons"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
         <EditTextPreference
             android:key="android_label"
             android:hint="@string/type_here"
-            android:title="@string/name"/>
+            android:title="@string/android_label"/>
 
         <CheckBoxPreference
             android:key="if_android"

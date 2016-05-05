@@ -6,23 +6,21 @@
                   android:icon="@mipmap/ic_launcher">
 
     <PreferenceCategory
-        android:key="business"
-        android:title="@string/business_name">
+        android:key="business_cat"
+        android:title="@string/business">
 
         <EditTextPreference
             android:key="business_name"
             android:hint="@string/type_here"
-            android:title="@string/name"/>
+            android:title="@string/business_name"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="business_color_code"
             android:title="Color reference"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="2dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
         <CheckBoxPreference
-            android:key="confirm_delete_email"
+            android:key="if_business_name"
             android:title="@string/show"
             android:defaultValue="false"/>
 
@@ -35,7 +33,7 @@
         <EditTextPreference
             android:key="logo_name"
             android:hint="@string/type_here"
-            android:title="@string/name"/>
+            android:title="@string/logo_name"/>
 
         <Preference
             android:key="logo_file"
@@ -43,7 +41,7 @@
             android:summary="File name"/>
 
         <CheckBoxPreference
-            android:key="confirm_delete_email"
+            android:key="if_logo"
             android:title="@string/show"
             android:defaultValue="false"/>
     </PreferenceCategory>
@@ -67,24 +65,20 @@
         android:key="bg_color"
         android:title="@string/bg_color">
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="bg_color_code"
             android:title="@string/bg_color"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="color_header"
         android:title="@string/header">
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="header_color_code"
             android:title="@string/header"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
         <CheckBoxPreference
             android:key="show_color_header"
@@ -96,31 +90,25 @@
         android:key="color_footer"
         android:title="@string/footer">
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="footer_color_code"
             android:title="@string/footer"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
         <CheckBoxPreference
             android:key="show_color_footer"
             android:title="@string/show_color"
             android:defaultValue="true"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="color_icons_code"
             android:title="@string/color_icons"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="color_bg_icons_code"
             android:title="@string/bg_icons"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -132,12 +120,9 @@
             android:hint="@string/type_here"
             android:title="@string/label_text"/>
 
-        <com.thebluealliance.spectrum.SpectrumPreference
-            android:defaultValue="@color/colorAccent"
+        <com.rarepebble.colorpicker.ColorPreference
             android:key="color_label_txt_code"
             android:title="@string/color"
-            app:spectrum_colors="@array/demo_colors"
-            app:spectrum_borderWidth="1dp"/>
+            app:colorpicker_defaultColor="#f00"/>
     </PreferenceCategory>
-
 </PreferenceScreen>
