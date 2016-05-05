@@ -128,7 +128,7 @@ public class BusinessPreferenceFragment extends PreferenceFragment implements Pr
     private EditTextPreference pinterestLabel;
     private CheckBoxPreference ifPinterest;
 
-    private EditTextPreference chatAddress;
+    private EditTextPreference chatLabel;
     private ColorPreference chatLabelColor;
     private ColorPreference chatIconColor;
     private CheckBoxPreference ifChat;
@@ -284,7 +284,7 @@ public class BusinessPreferenceFragment extends PreferenceFragment implements Pr
         ifPinterest = (CheckBoxPreference) findPreference("if_pinterest");
 
         //Chat item
-        chatAddress = (EditTextPreference) findPreference("chat_label");
+        chatLabel = (EditTextPreference) findPreference("chat_label");
         chatLabelColor = (ColorPreference) findPreference("chat_label_color");
         chatIconColor = (ColorPreference) findPreference("chat_icon_color");
         ifChat = (CheckBoxPreference) findPreference("if_chat");
@@ -305,20 +305,174 @@ public class BusinessPreferenceFragment extends PreferenceFragment implements Pr
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                switch (key) {
-                    case "business_name": {
-                        String businessText = sharedPreferences.getString("business_name", "");
-                        businessName.setSummary(businessText);
-                        break;
-                    }
-                    case "logo_name": {
-                        String logoText = sharedPreferences.getString("logo_name", "");
-                        logoName.setSummary(logoText);
-                        break;
-                    }
-                }
+                setNewValues(sharedPreferences, key);
             }
         };
+    }
+
+    private void setNewValues(SharedPreferences sharedPreferences, String key) {
+        switch (key) {
+            case "business_name": {
+                String businessText = sharedPreferences.getString("business_name", " ");
+                businessName.setSummary(businessText);
+                break;
+            }
+            case "logo_name": {
+                String logoText = sharedPreferences.getString("logo_name", "");
+                logoName.setSummary(logoText);
+                break;
+            }
+            case "bg_text": {
+                String bgTextValue = sharedPreferences.getString("bg_text", "");
+                bgText.setSummary(bgTextValue);
+                break;
+            }
+            case "label_text": {
+                String labelTextValue = sharedPreferences.getString("label_text", "");
+                mainText.setSummary(labelTextValue);
+                break;
+            }
+            case "mail_name": {
+                String mailNameValue = sharedPreferences.getString("mail_name", "");
+                mailAddress.setSummary(mailNameValue);
+                break;
+            }
+            case "mail_label": {
+                String mailLabelValue = sharedPreferences.getString("mail_label", "");
+                mailLabel.setSummary(mailLabelValue);
+                break;
+            }
+            case "fb_address": {
+                String fbAddressValue = sharedPreferences.getString("fb_address", "");
+                fbAddress.setSummary(fbAddressValue);
+                break;
+            }
+            case "fb_label": {
+                String fbLabelValue = sharedPreferences.getString("fb_label", "");
+                fbLabel.setSummary(fbLabelValue);
+                break;
+            }
+            case "twt_address": {
+                String twtAddressValue = sharedPreferences.getString("twt_address", "");
+                twtAddress.setSummary(twtAddressValue);
+                break;
+            }
+            case "twt_label": {
+                String twtLabelValue = sharedPreferences.getString("twt_label", "");
+                twtLabel.setSummary(twtLabelValue);
+                break;
+            }
+            case "linked_in_address": {
+                String linkedAddressValue = sharedPreferences.getString("linked_in_address", "");
+                linkedAddress.setSummary(linkedAddressValue);
+                break;
+            }
+            case "linked_in_label": {
+                String linkedLabelValue = sharedPreferences.getString("linked_in_label", "");
+                linkedLabel.setSummary(linkedLabelValue);
+                break;
+            }
+            case "google_plus_address": {
+                String googleAddressValue = sharedPreferences.getString("google_plus_address", "");
+                googlePlusAddress.setSummary(googleAddressValue);
+                break;
+            }
+            case "google_plus_label": {
+                String googleLabelValue = sharedPreferences.getString("google_plus_label", "");
+                googlePlusLabel.setSummary(googleLabelValue);
+                break;
+            }
+            case "youtube_address": {
+                String youtubeAddressValue = sharedPreferences.getString("youtube_address", "");
+                youtubeAddress.setSummary(youtubeAddressValue);
+                break;
+            }
+            case "youtube_label": {
+                String youtubeLabelValue = sharedPreferences.getString("youtube_label", "");
+                youtubeLabel.setSummary(youtubeLabelValue);
+                break;
+            }
+            case "phone_address": {
+                String phoneAddressValue = sharedPreferences.getString("phone_address", "");
+                phoneAddress.setSummary(phoneAddressValue);
+                break;
+            }
+            case "phone_label": {
+                String phoneLabelValue = sharedPreferences.getString("phone_label", "");
+                phoneLabel.setSummary(phoneLabelValue);
+                break;
+            }
+            case "gallery_address": {
+                String galleryAddressValue = sharedPreferences.getString("gallery_address", "");
+                galleryAddress.setSummary(galleryAddressValue);
+                break;
+            }
+            case "gallery_label": {
+                String galleryLabelValue = sharedPreferences.getString("gallery_label", "");
+                galleryLabel.setSummary(galleryLabelValue);
+                break;
+            }
+            case "about_address": {
+                String aboutAddressValue = sharedPreferences.getString("about_address", "");
+                aboutAddress.setSummary(aboutAddressValue);
+                break;
+            }
+            case "about_label": {
+                String aboutLabelValue = sharedPreferences.getString("about_label", "");
+                aboutLabel.setSummary(aboutLabelValue);
+                break;
+            }
+            case "website_address": {
+                String webAddressValue = sharedPreferences.getString("website_address", "");
+                websiteAddress.setSummary(webAddressValue);
+                break;
+            }
+            case "website_label": {
+                String webLabelValue = sharedPreferences.getString("website_label", "");
+                websiteLabel.setSummary(webLabelValue);
+                break;
+            }
+            case "map_address": {
+                String youtubeAddressValue = sharedPreferences.getString("map_address", "");
+                mapAddress.setSummary(youtubeAddressValue);
+                break;
+            }
+            case "map_label": {
+                String youtubeLabelValue = sharedPreferences.getString("map_label", "");
+                mapLabel.setSummary(youtubeLabelValue);
+                break;
+            }
+            case "pinterest_address": {
+                String pinterestAddressValue = sharedPreferences.getString("pinterest_address", "");
+                pinterestAddress.setSummary(pinterestAddressValue);
+                break;
+            }
+            case "pinterest_label": {
+                String pinterestLabelValue = sharedPreferences.getString("pinterest_label", "");
+                pinterestLabel.setSummary(pinterestLabelValue);
+                break;
+            }
+            case "chat_label": {
+                String chatLabelValue = sharedPreferences.getString("chat_label", "");
+                chatLabel.setSummary(chatLabelValue);
+                break;
+            }
+            case "android_address": {
+                String androidAddressValue = sharedPreferences.getString("android_address", "");
+                androidAddress.setSummary(androidAddressValue);
+                break;
+            }
+            case "android_label": {
+                String androidLabelValue = sharedPreferences.getString("android_label", "");
+                androidLabel.setSummary(androidLabelValue);
+                break;
+            }
+            case "user_plus_label": {
+                String userPlusLabelValue = sharedPreferences.getString("user_plus_label", "");
+                userPlusLabel.setSummary(userPlusLabelValue);
+                break;
+            }
+        }
     }
 
     @Override
@@ -473,11 +627,11 @@ public class BusinessPreferenceFragment extends PreferenceFragment implements Pr
         businessNameColor.setColor(Color.parseColor(business.getBackgroundColor()));
         ifBusinessName.setChecked(business.getIfBusinessname());
 
-//        logoName.setTitle(business.getLogo());
+//        logoName.setSummary(business.getLogo());
         logoFile.setSummary(business.getLogo());
         ifLogo.setChecked(business.getIfLogo());
 
-//        bgText.setTitle(business.getBackgroundImage());
+//        bgText.setSummary(business.getBackgroundImage());
         bgFile.setSummary(business.getBackgroundImage());
         bgColor.setColor(Color.parseColor(business.getBackgroundColor()));
         headerColor.setColor(Color.parseColor(business.getHeaderColor()));
@@ -486,95 +640,124 @@ public class BusinessPreferenceFragment extends PreferenceFragment implements Pr
         ifFooter.setChecked(business.getIfFooter());
 //        footerIconsColor.setColor(Color.parseColor(business.getFooterIconsColor()));
         footerIconsBg.setColor(Color.parseColor(business.getFooterIconsBackground()));
-        mainText.setTitle(business.getMainText());
+        mainText.setText(business.getMainText());
+        mainText.setSummary(business.getMainText());
 //        mainTextColor.setColor(Color.parseColor(business.getMaintextColor()));
-        mailAddress.setTitle(business.getMailAddress());
+        mailAddress.setText(business.getMailAddress());
+        mailAddress.setSummary(business.getMailAddress());
         mailColor.setColor(Color.parseColor(business.getMailLabelColor()));
         mailIconColor.setColor(Color.parseColor(business.getMailIconColor()));
-        mailLabel.setTitle(business.getMailLabel());
+        mailLabel.setText(business.getMailLabel());
+        mailLabel.setSummary(business.getMailLabel());
         ifMail.setChecked(business.getIfMail());
 
-        fbAddress.setTitle(business.getFacebookAddress());
+        fbAddress.setText(business.getFacebookAddress());
+        fbAddress.setSummary(business.getFacebookAddress());
         fbLabelColor.setColor(Color.parseColor(business.getFacebookLabelColor()));
         fbIconColor.setColor(Color.parseColor(business.getFacebookIconColor()));
-        fbLabel.setTitle(business.getFacebookLabel());
+        fbLabel.setText(business.getFacebookLabel());
+        fbLabel.setSummary(business.getFacebookLabel());
         ifFacebook.setChecked(business.getIfFacebook());
 
-        twtAddress.setTitle(business.getFacebookAddress());
+        twtAddress.setText(business.getFacebookAddress());
+        twtAddress.setSummary(business.getFacebookAddress());
         twtLabelColor.setColor(Color.parseColor(business.getFacebookLabelColor()));
         twtIconColor.setColor(Color.parseColor(business.getFacebookIconColor()));
-        twtLabel.setTitle(business.getFacebookLabel());
+        twtLabel.setText(business.getFacebookLabel());
+        twtLabel.setSummary(business.getFacebookLabel());
         ifTwitter.setChecked(business.getIfFacebook());
 
-        linkedAddress.setTitle(business.getFacebookAddress());
+        linkedAddress.setText(business.getFacebookAddress());
+        linkedAddress.setSummary(business.getFacebookAddress());
         linkedLabelColor.setColor(Color.parseColor(business.getFacebookLabelColor()));
         linkedIconColor.setColor(Color.parseColor(business.getFacebookIconColor()));
-        linkedLabel.setTitle(business.getFacebookLabel());
+        linkedLabel.setText(business.getFacebookLabel());
+        linkedLabel.setSummary(business.getFacebookLabel());
         ifLinkedIn.setChecked(business.getIfFacebook());
 
-        googlePlusAddress.setTitle(business.getGoogleplusAddress());
+        googlePlusAddress.setText(business.getGoogleplusAddress());
+        googlePlusAddress.setSummary(business.getGoogleplusAddress());
         googlePlusLabelColor.setColor(Color.parseColor(business.getGoogleplusLabelColor()));
         googlePlusIconColor.setColor(Color.parseColor(business.getGoogleplusIconColor()));
-        googlePlusLabel.setTitle(business.getGoogleplusLabel());
+        googlePlusLabel.setText(business.getGoogleplusLabel());
+        googlePlusLabel.setSummary(business.getGoogleplusLabel());
         ifGooglePlus.setChecked(business.getIfGoogleplus());
 
-        youtubeAddress.setTitle(business.getYoutubeAddress());
+        youtubeAddress.setText(business.getYoutubeAddress());
+        youtubeAddress.setSummary(business.getYoutubeAddress());
         youtubeLabelColor.setColor(Color.parseColor(business.getYoutubeLabelColor()));
         youtubeIconColor.setColor(Color.parseColor(business.getYoutubeIconColor()));
-        youtubeLabel.setTitle(business.getYoutubeLabel());
+        youtubeLabel.setText(business.getYoutubeLabel());
+        youtubeLabel.setSummary(business.getYoutubeLabel());
         ifYoutube.setChecked(business.getIfYoutube());
 
-        phoneAddress.setTitle(business.getPhoneAddress());
+        phoneAddress.setText(business.getPhoneAddress());
+        phoneAddress.setSummary(business.getPhoneAddress());
         phoneLabelColor.setColor(Color.parseColor(business.getPhoneLabelColor()));
         phoneIconColor.setColor(Color.parseColor(business.getPhoneIconColor()));
-        phoneLabel.setTitle(business.getPhoneLabel());
+        phoneLabel.setText(business.getPhoneLabel());
+        phoneLabel.setSummary(business.getPhoneLabel());
         ifPhone.setChecked(business.getIfPhone());
 
-        galleryAddress.setTitle(business.getGalleryAddress());
+        galleryAddress.setText(business.getGalleryAddress());
+        galleryAddress.setSummary(business.getGalleryAddress());
         galleryLabelColor.setColor(Color.parseColor(business.getGalleryLabelColor()));
         galleryIconColor.setColor(Color.parseColor(business.getGalleryIconColor()));
-        galleryLabel.setTitle(business.getGalleryLabel());
+        galleryLabel.setText(business.getGalleryLabel());
+        galleryLabel.setSummary(business.getGalleryLabel());
         ifGallery.setChecked(business.getIfGallery());
 
-        aboutAddress.setTitle(business.getAboutAddress());
+        aboutAddress.setText(business.getAboutAddress());
+        aboutAddress.setSummary(business.getAboutAddress());
         aboutLabelColor.setColor(Color.parseColor(business.getAboutLabelColor()));
         aboutIconColor.setColor(Color.parseColor(business.getAboutIconColor()));
 //        aboutTextColor.setColor(Color.parseColor(business.getAboutTextColor()));
-        aboutLabel.setTitle(business.getAboutLabel());
+        aboutLabel.setText(business.getAboutLabel());
+        aboutLabel.setSummary(business.getAboutLabel());
         ifAbout.setChecked(business.getIfAbout());
 
-        websiteAddress.setTitle(business.getWebsiteAddress());
+        websiteAddress.setText(business.getWebsiteAddress());
+        websiteAddress.setSummary(business.getWebsiteAddress());
         websiteLabelColor.setColor(Color.parseColor(business.getWebsiteLabelColor()));
         websiteIconColor.setColor(Color.parseColor(business.getWebsiteIconColor()));
-        websiteLabel.setTitle(business.getWebsiteLabel());
+        websiteLabel.setText(business.getWebsiteLabel());
+        websiteLabel.setSummary(business.getWebsiteLabel());
         ifWebsite.setChecked(business.getIfWebsite());
 
-        mapAddress.setTitle(business.getMapAddress());
+        mapAddress.setText(business.getMapAddress());
+        mapAddress.setSummary(business.getMapAddress());
         mapLabelColor.setColor(Color.parseColor(business.getMapLabelColor()));
         mapIconColor.setColor(Color.parseColor(business.getMapIconColor()));
-        mapLabel.setTitle(business.getMapLabel());
+        mapLabel.setText(business.getMapLabel());
+        mapLabel.setSummary(business.getMapLabel());
         ifMap.setChecked(business.getIfMap());
 
-        pinterestAddress.setTitle(business.getPinterestAddress());
+        pinterestAddress.setText(business.getPinterestAddress());
+        pinterestAddress.setSummary(business.getPinterestAddress());
         pinterestLabelColor.setColor(Color.parseColor(business.getPinterestLabelColor()));
         pinterestIconColor.setColor(Color.parseColor(business.getPinterestIconColor()));
-        pinterestLabel.setTitle(business.getPinterestLabel());
+        pinterestLabel.setText(business.getPinterestLabel());
+        pinterestLabel.setSummary(business.getPinterestLabel());
         ifPinterest.setChecked(business.getIfPinterest());
 
-        chatAddress.setTitle(business.getChatLabel());
+        chatLabel.setText(business.getChatLabel());
+        chatLabel.setSummary(business.getChatLabel());
         chatLabelColor.setColor(Color.parseColor(business.getChatLabelColor()));
         chatIconColor.setColor(Color.parseColor(business.getChatIconColor()));
         ifChat.setChecked(business.getIfChat());
 
-        androidAddress.setTitle(business.getAndroidAddress());
+        androidAddress.setText(business.getAndroidAddress());
+        androidAddress.setSummary(business.getAndroidAddress());
         androidLabelColor.setColor(Color.parseColor(business.getAndroidLabelColor()));
         androidIconColor.setColor(Color.parseColor(business.getAndroidIconColor()));
-        androidLabel.setTitle(business.getAndroidLabel());
+        androidLabel.setText(business.getAndroidLabel());
+        androidLabel.setSummary(business.getAndroidLabel());
         ifAndroid.setChecked(business.getIfAndroid());
 
         userPlusLabelColor.setColor(Color.parseColor(business.getUserplusLabelColor()));
         userPlusIconColor.setColor(Color.parseColor(business.getUserplusIconColor()));
-        userPlusLabel.setTitle(business.getUserplusLabel());
+        userPlusLabel.setText(business.getUserplusLabel());
+        userPlusLabel.setSummary(business.getUserplusLabel());
         ifUserPlus.setChecked(business.getIfUserplus());
     }
 
